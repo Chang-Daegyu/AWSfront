@@ -1,27 +1,33 @@
-import { useState, useEffect } from 'react'
-import './App.css'
+import "./App.css";
+import CategoryList from "./components/CategoryList";
+import BookGrid from "./components/BookGrid";
 
 function App() {
-    const [message, setMessage] = useState('')
+  return (
+    <div className="app">
+      <header className="header">
+  <h1 className="logo">걷다가 서재</h1>
 
-    useEffect(() => {
-        // Example of fetching from backend to verify proxy/CORS
-        fetch('/api/hello')
-            .then(res => res.text())
-            .then(data => setMessage(data))
-            .catch(err => console.error('Error fetching from backend:', err))
-    }, [])
+  <div className="profile-area">
+    <div className="profile-icon"></div>
+    <span className="profile-name">에이블러 님</span>
+  </div>
+</header>
 
-    return (
-        <>
-            <h1>Frontend (JSX) + Backend</h1>
-            <div className="card">
-                <p>
-                    Backend says: {message || 'Loading... (Ensure backend is running)'}
-                </p>
-            </div>
-        </>
-    )
+
+      <div className="layout">
+        <aside className="sidebar">
+          <h2 className="sidebar-title">카테고리</h2>
+          <CategoryList />
+        </aside>
+
+        <main className="content">
+          <BookGrid />
+        </main>
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
+
