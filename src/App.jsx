@@ -6,21 +6,25 @@ import BookRegister from "./pages/BookRegister";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import BookDetail from "./components/BookDetail";
+import ProfilePage from "./pages/ProfilePage";
+import ProfileEdit from "./pages/ProfileEdit";
 
 function App() {
-    return (
-        <BrowserRouter>
-            <Layout>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/book-register" element={<BookRegister />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/signup" element={<Signup />} />
-                    <Route path="/:bookId" element={<BookDetail />} />
-                </Routes>
-            </Layout>
-        </BrowserRouter>
-    );
+  return (
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/book-register" element={<BookRegister />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/profile/edit" element={<ProfileEdit />} />
+          <Route path="/:bookId" element={<BookDetail />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
+  );
 }
 
 export default App;
