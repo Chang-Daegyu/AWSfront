@@ -11,6 +11,7 @@ function EditBookModal({ book, onClose, onSave }) {
 
     const handleSave = () => {
         onSave({ ...book, title, category, content });
+        onSave(updatedBook);
         onClose();
     };
 
@@ -61,7 +62,11 @@ function EditBookModal({ book, onClose, onSave }) {
 
 function BookDetail() {
     const { bookId } = useParams();
-    const book = BOOKS.find((b) => b.id === Number(bookId));
+    const [book, setBook] = useState(() => {
+        const found = BOOKS.find((b) => String(b.id) === String(bookId));
+        return found || null;
+    });
+
     const [showEditModal, setShowEditModal] = useState(false);
 
     if (!book) {
@@ -74,7 +79,10 @@ function BookDetail() {
 
     const handleSave = (updatedBook) => {
         // TODO: 실제 API 연동 시 여기서 저장 처리
-        console.log("저장된 도서:", updatedBook);
+        setBook(updatedBook);
+    
+    // 나중에 실제 API 붙일 때는 여기에서 fetch/axios로 업데이트 호출하면 됨
+    // e.g. await api.updateBook(updatedBook);
     };
 
     return (
