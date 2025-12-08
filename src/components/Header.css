@@ -3,8 +3,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 40px;
+  padding: 0 32px;
+  height: 72px;
+  border-bottom: 1px solid #e5e7eb;
   background-color: #ffffff;
+  color: #374151;
 }
 
 /* 왼쪽 로고 영역 */
@@ -25,10 +28,10 @@
 .profile-area {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
-/* 공통 버튼 스타일 */
+/* 공통 버튼 스타일 (페이지 네비용) */
 .header-btn {
   border-radius: 999px;
   padding: 7px 18px;
@@ -41,24 +44,74 @@
     color 0.15s ease;
 }
 
-/* 로그인 버튼: 옅은 테두리 */
+/* 로그인 / 회원가입 버튼 기본 스타일 (feat-migration 버전 기반) */
 .login-btn {
-  border-color: #d0d7de;
-  color: #111827;
   background-color: #ffffff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.signup-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
 }
 
 .login-btn:hover {
   background-color: #f3f4f6;
 }
 
-/* 회원가입 버튼: 파란색 */
-.signup-btn {
-  border-color: #2563eb;
-  background-color: #2563eb;
-  color: #ffffff;
-}
-
 .signup-btn:hover {
   background-color: #1d4ed8;
+}
+
+/* 로그인 후 영역들 (feat-migration에서 쓰던 클래스들, 혹시 다른 컴포넌트에서 써도 되도록 남김) */
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.profile-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.logout-btn {
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+
+  background-color: #ffffff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.add-book-btn {
+  height: 32px;
+  padding: 0 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+
+  background-color: #2f66ed;
+  color: white;
+  border: none;
+}
+
+.add-book-btn:hover {
+  background-color: #2552c8;
 }
