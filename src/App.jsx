@@ -1,33 +1,55 @@
-import "./App.css";
-import CategoryList from "./components/CategoryList";
-import BookGrid from "./components/BookGrid";
+// src/App.jsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Layout from "./components/Layout";
+import BookRegister from "./pages/BookRegister";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 function App() {
-  return (
-    <div className="app">
-      <header className="header">
-  <h1 className="logo">걷다가 서재</h1>
-
-  <div className="profile-area">
-    <div className="profile-icon"></div>
-    <span className="profile-name">에이블러 님</span>
-  </div>
-</header>
-
-
-      <div className="layout">
-        <aside className="sidebar">
-          <h2 className="sidebar-title">카테고리</h2>
-          <CategoryList />
-        </aside>
-
-        <main className="content">
-          <BookGrid />
-        </main>
-      </div>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <Layout>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/book-register" element={<BookRegister />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/signup" element={<Signup />} />
+                </Routes>
+            </Layout>
+        </BrowserRouter>
+    );
 }
 
 export default App;
 
+
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { useState } from "react";
+// import Home from "./pages/Home";
+// import Layout from "./components/Layout";
+// import BookRegister from "./pages/BookRegister";
+// import LoginPage from './pages/login';
+// import SignupPage from './pages/signup';
+
+
+// function App() {
+//     // ✅ 전역 로그인 상태 (관제탑)
+//     const [isLoggedIn, setIsLoggedIn] = useState(false);
+//     const [userName, setUserName] = useState("");
+
+//     return (
+//         <BrowserRouter>
+//             <Layout>
+//                 <Routes>
+//                     <Route path="/" element={<Home />} />
+//                     <Route path="/book-register" element={<BookRegister />} />
+//                     <Route path="/login" element={<LoginPage />} />
+//                     <Route path="/signup" element={<SignupPage />} />
+//                 </Routes>
+//             </Layout>
+//         </BrowserRouter>
+//     );
+// }
+
+// export default App;

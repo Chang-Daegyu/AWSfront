@@ -1,0 +1,64 @@
+/* 전체 헤더 영역 */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 40px;
+  background-color: #ffffff;
+}
+
+/* 왼쪽 로고 영역 */
+.logo-area {
+  display: flex;
+  align-items: center;
+}
+
+/* 걷다가 서재 글자 크기/색상 */
+.logo-text {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f2933;
+}
+
+/* 오른쪽 버튼 영역 */
+.profile-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 공통 버튼 스타일 */
+.header-btn {
+  border-radius: 999px;
+  padding: 7px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+/* 로그인 버튼: 옅은 테두리 */
+.login-btn {
+  border-color: #d0d7de;
+  color: #111827;
+  background-color: #ffffff;
+}
+
+.login-btn:hover {
+  background-color: #f3f4f6;
+}
+
+/* 회원가입 버튼: 파란색 */
+.signup-btn {
+  border-color: #2563eb;
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.signup-btn:hover {
+  background-color: #1d4ed8;
+}
