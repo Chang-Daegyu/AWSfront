@@ -164,7 +164,7 @@
   box-shadow: 0 6px 14px rgba(15, 23, 42, 0.12);
 }
 
-/* 버튼 왼쪽 아이콘 (이모지) */
+/* 버튼 왼쪽 아이콘 (이지) */
 .btn-icon {
   width: 20px;
   text-align: center;
@@ -202,7 +202,7 @@
 }
 
 /* 반응형 */
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .profile-page {
     margin: 16px;
   }
