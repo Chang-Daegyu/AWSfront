@@ -10,7 +10,7 @@ function EditBookModal({ book, onClose, onSave }) {
     const [content, setContent] = useState(book.content);
 
     const handleSave = () => {
-        onSave({ ...book, title, category, content });
+        const updatedBook = { ...book, title, category, content };
         onSave(updatedBook);
         onClose();
     };
